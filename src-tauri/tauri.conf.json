@@ -1,0 +1,37 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "follow",
+  "version": "0.1.0",
+  "identifier": "com.follow.app",
+  "build": {
+    "beforeDevCommand": "bun run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "bun run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "follow",
+        "decorations": false,
+        "width": 1280,
+        "height": 800,
+        "resizable": true,
+        "fullscreen": false,
+        "url": "https://app.follow.is",
+        "userAgent": "Mozilla/5.0 (Linux; Android 10; Mobile) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self' https://app.follow.is; connect-src 'self' https://app.follow.is; img-src 'self' https://app.follow.is data:; script-src 'self' https://app.follow.is; style-src 'self' https://app.follow.is 'unsafe-inline';"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/128x128.png",
+      "icons/icon.png"
+    ]
+  }
+}
