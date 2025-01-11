@@ -1,9 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import reactLogo from "./assets/react.svg";
 import { invoke } from "@tauri-apps/api/core";
 import "./App.css";
 
+function registerServiceWorker() {
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker
+        .register("/sw.js")
+        .then(() => {
+          console.log("ServiceWorker registration successful");
+        })
+        .catch((err) => {
+          console.log("ServiceWorker registration failed: ", err);
+        });
+    });
+  }
+}
+
 function App() {
+  useEffect(() => {
+    registerServiceWorker();
+  }, []);
+
   const [greetMsg, setGreetMsg] = useState("");
   const [name, setName] = useState("");
 
