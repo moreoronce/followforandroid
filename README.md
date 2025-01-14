@@ -1,7 +1,11 @@
-# Tauri + React + Typescript
+# 📝 项目介绍
 
-This template should help get you started developing with Tauri, React and Typescript in Vite.
+整体项目很简单，就是通过Webview打开Follow.is的网站，然后用Tauri生成Android编译APK所需要的文件，最后进行打包。整体APP大小在28M左右，暂时还没有做任何优化，先占个坑，在后续自己使用过程中如果发现问题会进行更新。
 
-## Recommended IDE Setup
+## 支持功能
 
-- [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+- Google和Github的登录可用
+- RSS正常可以阅读(Youtube订阅源暂时无法直接播放视频)
+- 添加订阅源正常
+- 大部分页面显示正常（目前还没有找到不正常的）
+- 使用SW进行缓存
